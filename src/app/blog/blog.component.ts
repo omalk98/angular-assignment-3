@@ -8,6 +8,8 @@ import blogData from '../blogData.json';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
+  
+  public blogPosts : Array<BlogPost> = blogData;
 
   constructor() { }
 

@@ -9,6 +9,12 @@ import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
 import { PostComponent } from './post/post.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PostCardComponent } from './post-card/post-card.component';
+import { WidgetSearchComponent } from './widget-search/widget-search.component';
+import { LatestPostsComponent } from './latest-posts/latest-posts.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { TagsComponent } from './tags/tags.component';
+import { PostDataComponent } from './post-data/post-data.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HomeComponent,
     BlogComponent,
     PostComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PostCardComponent,
+    WidgetSearchComponent,
+    LatestPostsComponent,
+    CategoriesComponent,
+    TagsComponent,
+    PostDataComponent,
   ],
   imports: [
     BrowserModule,
