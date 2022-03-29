@@ -1,18 +1,28 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BlogPost } from '../BlogPost';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-post-data',
   templateUrl: './post-data.component.html',
   styleUrls: ['./post-data.component.css']
 })
-export class PostDataComponent implements OnInit {
+export class PostDataComponent implements OnInit, OnDestroy {
 
-  @Input('post') postDetails : BlogPost | undefined;
+  querySub: any = [];
 
-  constructor() { }
+  postDetails: BlogPost | undefined;
+
+  constructor(private post:PostService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.querySub = this.route.params.subscribe(params =>{
+      this.post.getPostById(params["id"]).subscribe((data: BlogPost) => this.postDetails = data);
+    })
   }
 
+  ngOnDestroy() {
+    if(this.querySub) this.querySub.unsubscribe();
+  }
 }

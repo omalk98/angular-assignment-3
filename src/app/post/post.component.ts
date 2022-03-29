@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BlogPost } from '../BlogPost';
 
 @Component({
@@ -7,7 +7,7 @@ import { BlogPost } from '../BlogPost';
   styleUrls: ['./post.component.css']
 })
 
-export class PostComponent implements OnInit {
+export class PostComponent {
 
   public blogPosts : Array<BlogPost> = [{
     "_id": "",
@@ -31,7 +31,4 @@ export class PostComponent implements OnInit {
   }];
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 }

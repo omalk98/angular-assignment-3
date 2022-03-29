@@ -1,9 +1,9 @@
-<div class="post-thumbnail"><a routerLink="/post"><img src={{postInput?.featuredImage}} alt="..." class="img-fluid"></a></div>
+<div class="post-thumbnail"><a [routerLink]="['/post', postInput?._id]"><img src={{postInput?.featuredImage}} alt="blog image" class="img-fluid"></a></div>
 <div class="post-details">
   <div class="post-meta d-flex justify-content-between">
     <div class="date meta-last">{{postInput?.postDate}}</div>
-    <div class="category"><a routerLink="#">{{postInput?.category}}</a></div>
-  </div><a routerLink="/post">
+    <div class="category"><a [routerLink]="['/blog']" [queryParams]="{category : postInput?.category}">{{postInput?.category}}</a></div>
+  </div><a [routerLink]="['/post', postInput?._id]">
     <h3 class="h4">{{postInput?.title}}</h3></a>
   <div innerHTML="{{postInput?.post}}" class="text-muted"></div>
   <footer class="post-footer d-flex align-items-center"><a routerLink="#" class="author d-flex align-items-center flex-wrap">

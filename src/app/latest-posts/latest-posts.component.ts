@@ -1,14 +1,21 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BlogPost } from '../BlogPost';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-latest-posts',
   templateUrl: './latest-posts.component.html',
   styleUrls: ['./latest-posts.component.css']
 })
-export class LatestPostsComponent {
+export class LatestPostsComponent implements OnInit {
   
-  @Input('post') postList : Array<BlogPost> | undefined;
+  postList : Array<BlogPost> | undefined;
 
-  constructor() { }
+  constructor(private post:PostService) { }
+
+  ngOnInit(): void {
+    this.post.getPosts(1, "", "").subscribe((data: BlogPost[] | undefined) => this.postList = data?.slice(0, 3))
+  }
+
+  
 }

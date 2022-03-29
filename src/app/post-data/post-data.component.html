@@ -7,7 +7,7 @@
         <h1>{{postDetails?.title}}<a routerLink="#"><i class="fa fa-bookmark-o"></i></a></h1>
         <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a routerLink="#"
                 class="author d-flex align-items-center flex-wrap">
-                <div class="avatar"><img src="/assets/img/user.svg" alt="..." class="img-fluid"></div>
+                <div class="avatar"><img src="/assets/img/user.svg" alt="avatar" class="img-fluid"></div>
                 <div class="title"><span>{{postDetails?.postedBy}}</span></div>
             </a>
             <div class="d-flex align-items-center flex-wrap">
@@ -18,7 +18,7 @@
         </div>
         <div innerHTML={{postDetails?.post}} class="post-body">
         </div>
-        <div class="post-tags"><a *ngFor="let tag of postDetails?.tags" routerLink="#" class="tag">{{tag}}</a></div>
+        <div class="post-tags"><a *ngFor="let tag of postDetails?.tags" [routerLink]="['/blog']" [queryParams]="{ tag: tag.substring(1) }" class="tag">{{tag}}</a></div>
         <div class="post-comments">
             <header>
                 <h3 class="h6">Post Comments<span class="no-of-comments">({{postDetails?.comments?.length}})</span></h3>

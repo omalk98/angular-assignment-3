@@ -4,9 +4,9 @@
     </header>
     <div class="blog-posts">
     </div>
-    <a *ngFor="let post of postList" routerLink="#">
+    <a *ngFor="let post of postList" [routerLink]="['/post', post._id]">
         <div class="item d-flex align-items-center">
-            <div class="image"><img src={{post?.featuredImage}} alt="..." class="img-fluid"></div>
+            <div class="image"><img src={{post?.featuredImage}} alt="blog image" class="img-fluid"></div>
             <div class="title"><strong>{{post?.title}}</strong>
                 <div class="d-flex align-items-center">
                     <div class="views"><i class="icon-eye"></i> {{post?.views}}</div>
