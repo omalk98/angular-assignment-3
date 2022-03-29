@@ -12,7 +12,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let post of blogPosts" [routerLink]="['admin/post/', post?._id]">
+                    <tr *ngFor="let post of blogPosts" (click)="rowClicked($event, post?._id)">
                         <td>{{post?.title}}</td>
                         <td>{{post?.postDate | date: "mediumDate"}}</td>
                         <td>{{post?.category}}</td>

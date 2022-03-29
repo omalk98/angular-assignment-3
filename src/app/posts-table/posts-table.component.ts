@@ -18,7 +18,7 @@ export class PostsTableComponent implements OnInit {
     this.post.getAllPosts().subscribe(data => this.blogPosts = data);
   }
 
-  rowClicked() {
-    
+  rowClicked(e:any, id:any) {
+    this.router.navigate(["/admin/post/", id]);
   }
 }

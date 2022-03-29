@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PostComponent } from './post/post.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path : 'admin',
     component : PostsTableComponent
+  },
+  {
+    path : 'admin/post/:id',
+    component : EditPostComponent
   },
   {
     path : '**',
