@@ -4,6 +4,7 @@ import { BlogComponent } from './blog/blog.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PostComponent } from './post/post.component';
+import { PostsTableComponent } from './posts-table/posts-table.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path : 'post/:id',
     component : PostComponent
+  },
+  {
+    path : 'admin',
+    component : PostsTableComponent
   },
   {
     path : '**',

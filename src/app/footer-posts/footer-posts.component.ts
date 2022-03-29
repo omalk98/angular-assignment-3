@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BlogPost } from '../BlogPost';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-footer-posts',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer-posts.component.css']
 })
 export class FooterPostsComponent implements OnInit {
+  
+  postList : Array<BlogPost> | undefined;
 
-  constructor() { }
+  constructor(private post:PostService) { }
 
   ngOnInit(): void {
+    this.post.getPosts(1, "", "").subscribe((data: BlogPost[] | undefined) => this.postList = data?.slice(0, 3))
   }
 
+  
 }
