@@ -37,7 +37,7 @@ export class PostService {
     return this.http.get<any>(`https://assignment-4-server.herokuapp.com/api/posts?page=${page}&perPage=${perPage}${tag ? `&tag=${tag.replace(/[#]/g, '' )}` : ''} ${category ? `&category=${category}` : ''}`);
   }
 
-  getPostById(id:number) : any{
+  getPostById(id:string) : any{
     return this.http.get<any>(`https://assignment-4-server.herokuapp.com/api/posts/${id}`);
   }
 

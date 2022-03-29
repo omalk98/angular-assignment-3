@@ -12,7 +12,10 @@ export class PostDataComponent implements OnInit, OnDestroy {
 
   querySub: any = [];
 
-  postDetails: BlogPost | undefined;
+  postDetails: BlogPost = new BlogPost();
+
+  commentName: string = "";
+  commentText: string = "";
 
   constructor(private post:PostService, private route:ActivatedRoute) { }
 
@@ -24,5 +27,20 @@ export class PostDataComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     if(this.querySub) this.querySub.unsubscribe();
+  }
+
+  submitComment() {
+    let comment: any = {
+      author : this.commentName,
+      comment : this.commentText,
+      date : new Date().toLocaleDateString()
+    };
+    this.postDetails.comments.push(comment);
+
+    this.post.updatePostById(this.postDetails._id, this.postDetails).subscribe(() =>{
+      this.commentName = "";
+      this.commentText = "";
+    });
+
   }
 }

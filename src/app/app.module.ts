@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { PagingComponent } from './paging/paging.component';
 import { FooterPostsComponent } from './footer-posts/footer-posts.component';
 import { PostsTableComponent } from './posts-table/posts-table.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +42,13 @@ import { EditPostComponent } from './edit-post/edit-post.component';
     FooterPostsComponent,
     PostsTableComponent,
     EditPostComponent,
+    NewPostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { HomeComponent } from './home/home.component';
+import { NewPostComponent } from './new-post/new-post.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PostComponent } from './post/post.component';
 import { PostsTableComponent } from './posts-table/posts-table.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path : 'admin/post/:id',
     component : EditPostComponent
+  },
+  {
+    path : 'admin/newPost',
+    component : NewPostComponent
   },
   {
     path : '**',
