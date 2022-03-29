@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPost } from '../BlogPost';
-import blogData from '../blogData.json';
 
 @Component({
   selector: 'app-post',
@@ -10,7 +9,26 @@ import blogData from '../blogData.json';
 
 export class PostComponent implements OnInit {
 
-  public blogPosts : Array<BlogPost> = blogData;
+  public blogPosts : Array<BlogPost> = [{
+    "_id": "",
+    "title": "",
+    "postDate": "",
+    "featuredImage": "",
+    "post": "",
+    "postedBy": "",
+    "comments": [
+      {
+        "_id": "",
+        "author": "",
+        "comment": "",
+        "date": ""
+      }
+    ],
+    "category": "",
+    "tags": [],
+    "isPrivate": false,
+    "views": 0
+  }];
 
   constructor() { }
 

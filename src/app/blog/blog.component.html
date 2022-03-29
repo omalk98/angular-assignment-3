@@ -5,6 +5,7 @@
       <div class="container">
         <div class="row">
           <app-post-card *ngFor="let post of blogPosts" class="post col-xl-6" [post]="post"></app-post-card>
+          <div class="w-100"><app-paging [page]="page" (newPage)="getPage($event)"></app-paging></div>
         </div>
       </div>
     </main>
@@ -13,7 +14,7 @@
       <app-widget-search></app-widget-search>
 
       <!-- Widget [Latest Posts Widget] -->
-      <app-latest-posts [post]="blogPosts.slice(0,3)"></app-latest-posts>
+      <app-latest-posts [post]="blogPosts?.slice(0,3)"></app-latest-posts>
 
       <!-- Widget [Categories Widget]-->
       <app-categories></app-categories>

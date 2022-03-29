@@ -15,6 +15,8 @@ import { LatestPostsComponent } from './latest-posts/latest-posts.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { TagsComponent } from './tags/tags.component';
 import { PostDataComponent } from './post-data/post-data.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PagingComponent } from './paging/paging.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +33,12 @@ import { PostDataComponent } from './post-data/post-data.component';
     CategoriesComponent,
     TagsComponent,
     PostDataComponent,
+    PagingComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
