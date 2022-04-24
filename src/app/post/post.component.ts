@@ -4,7 +4,7 @@ import { BlogPost } from '../BlogPost';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  styles: ['']
 })
 
 export class PostComponent {

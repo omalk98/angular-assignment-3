@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-paging',
   templateUrl: './paging.component.html',
-  styleUrls: ['./paging.component.css']
+  styles: ['']
 })
 export class PagingComponent implements OnInit {
   ngOnInit(): void {

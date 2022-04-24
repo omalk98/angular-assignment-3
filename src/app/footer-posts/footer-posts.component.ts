@@ -5,7 +5,7 @@ import { PostService } from '../post.service';
 @Component({
   selector: 'app-footer-posts',
   templateUrl: './footer-posts.component.html',
-  styleUrls: ['./footer-posts.component.css']
+  styles: ['']
 })
 export class FooterPostsComponent implements OnInit {
   

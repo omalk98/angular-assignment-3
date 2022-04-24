@@ -6,7 +6,7 @@ import { PostService } from '../post.service';
 @Component({
   selector: 'app-posts-table',
   templateUrl: './posts-table.component.html',
-  styleUrls: ['./posts-table.component.css']
+  styles: ['']
 })
 export class PostsTableComponent implements OnInit {
 
